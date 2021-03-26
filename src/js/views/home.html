@@ -1,0 +1,65 @@
+<div class="oj-hybrid-padding">
+    <h1>Home Area</h1>
+    <div class="oj-panel oj-bg-info-30">
+      <h4 class="oj-header-border" > Add New classification</h4>
+       
+        <div class="oj-flex">
+            
+            <div id="form-container">
+     
+    <oj-dialog style="display:none" id="msgDialog" dialog-title="[[msgTitle]]">
+        <div slot="body">
+       <oj-bind-text value="[[msgBody]]">
+
+       </oj-bind-text>
+        </div>
+        <div slot="footer">
+        <oj-button on-oj-action="[[closeDialog]]">okey</oj-button>
+        </div>
+        </oj-dialog>
+
+            <div>
+                <oj-input-text value='{{id}}' label-hint="id">id</oj-input-text>
+                <oj-input-text value='{{title}}' label-hint="Title">title</oj-input-text>
+                <oj-input-text value='{{desc}}' label-hint="description">title</oj-input-text>
+                <oj-button on-oj-action="[[addclass]]">save classification</oj-button>
+            </div>
+            </div>
+        </div>
+        <div id="tableContainer">
+            <oj-table id='classesTable' data="[[dataprovider]]"
+            selection-mode='{"row" : "single" , "column" : "multiple" }'
+            dnd='{"recorder":{"columns":"enable"} }'
+            scroll-policy='loadMoreOnScroll'
+            scroll-policy-options='{"fetchSize" : 20}'
+            style="width: 1px; min-width: 100%;"
+            columns='[
+            {"headerText":"ID#" ,"field" : "id",
+             "headerClassName":"oj-sm-only-hide" ,
+             "className":"oj-sm-only-hide" ,
+             "resizeable":"disabled" } ,
+             {"headerText":"Title" ,"field" : "title",
+             "resizeable":"enabled" },
+             {"headerText":"Description" ,"field" : "description",
+             "headerClassName":"oj-sm-only-hide" ,
+             "className":"oj-sm-only-hide" ,
+             "resizeable":"enabled" } ]' >
+
+            </oj-table>
+
+        </div>
+    </div> 
+    <div>
+            <!--
+           <form>
+            <input data-bind="value:title"  >
+            
+           
+            <button data-bind="click:addclass">click</button>
+           </form>
+            </div>
+        -->
+             
+    
+
+  
